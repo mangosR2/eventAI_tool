@@ -57,6 +57,7 @@
             this.helpToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -80,7 +81,7 @@
             // newEventToolStripMenuItem
             // 
             this.newEventToolStripMenuItem.Name = "newEventToolStripMenuItem";
-            this.newEventToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.newEventToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.newEventToolStripMenuItem.Text = "New Event";
             this.newEventToolStripMenuItem.Click += new System.EventHandler(this.AddNewEvent);
             // 
@@ -91,27 +92,27 @@
             this.sQLFileToolStripMenuItem,
             this.queryWindowToolStripMenuItem});
             this.saveToToolStripMenuItem.Name = "saveToToolStripMenuItem";
-            this.saveToToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.saveToToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
             this.saveToToolStripMenuItem.Text = "Save NPC  to";
             // 
             // databaseToolStripMenuItem
             // 
             this.databaseToolStripMenuItem.Name = "databaseToolStripMenuItem";
-            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.databaseToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.databaseToolStripMenuItem.Text = "Database";
             this.databaseToolStripMenuItem.Click += new System.EventHandler(this.databaseToolStripMenuItem_Click);
             // 
             // sQLFileToolStripMenuItem
             // 
             this.sQLFileToolStripMenuItem.Name = "sQLFileToolStripMenuItem";
-            this.sQLFileToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.sQLFileToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.sQLFileToolStripMenuItem.Text = "SQL File";
             this.sQLFileToolStripMenuItem.Click += new System.EventHandler(this.sQLFileToolStripMenuItem_Click);
             // 
             // queryWindowToolStripMenuItem
             // 
             this.queryWindowToolStripMenuItem.Name = "queryWindowToolStripMenuItem";
-            this.queryWindowToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.queryWindowToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.queryWindowToolStripMenuItem.Text = "Query Window";
             this.queryWindowToolStripMenuItem.Click += new System.EventHandler(this.queryWindowToolStripMenuItem_Click);
             // 
@@ -121,20 +122,20 @@
             this.databaseToolStripMenuItem1,
             this.sQLToolStripMenuItem1});
             this.saveAllNPCsToToolStripMenuItem.Name = "saveAllNPCsToToolStripMenuItem";
-            this.saveAllNPCsToToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
+            this.saveAllNPCsToToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
             this.saveAllNPCsToToolStripMenuItem.Text = "Save All NPCs to";
             // 
             // databaseToolStripMenuItem1
             // 
             this.databaseToolStripMenuItem1.Name = "databaseToolStripMenuItem1";
-            this.databaseToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.databaseToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.databaseToolStripMenuItem1.Text = "Database";
             this.databaseToolStripMenuItem1.Click += new System.EventHandler(this.databaseToolStripMenuItem1_Click);
             // 
             // sQLToolStripMenuItem1
             // 
             this.sQLToolStripMenuItem1.Name = "sQLToolStripMenuItem1";
-            this.sQLToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
+            this.sQLToolStripMenuItem1.Size = new System.Drawing.Size(131, 22);
             this.sQLToolStripMenuItem1.Text = "SQL";
             this.sQLToolStripMenuItem1.Click += new System.EventHandler(this.sQLToolStripMenuItem1_Click);
             // 
@@ -142,7 +143,7 @@
             // 
             this.setInCreaturetemplateToolStripMenuItem.Enabled = false;
             this.setInCreaturetemplateToolStripMenuItem.Name = "setInCreaturetemplateToolStripMenuItem";
-            this.setInCreaturetemplateToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
+            this.setInCreaturetemplateToolStripMenuItem.Size = new System.Drawing.Size(114, 20);
             this.setInCreaturetemplateToolStripMenuItem.Text = "Remove Scriptname";
             this.setInCreaturetemplateToolStripMenuItem.Click += new System.EventHandler(this.setInCreaturetemplateToolStripMenuItem_Click);
             // 
@@ -306,10 +307,11 @@
             this.ClientSize = new System.Drawing.Size(733, 624);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "NPCEditor";
             this.ShowIcon = false;
-            this.Text = "MaNGOS eventAI development tool";
+            this.Text = "MangosR2 EventAI development tool";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Editor_FormClosing);
             this.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.NPCEditor_ControlRemoved);
             this.menuStrip1.ResumeLayout(false);
@@ -317,6 +319,7 @@
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

@@ -440,7 +440,7 @@
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Hauptfenster";
-            this.Text = "CMaNGOS script development tool";
+            this.Text = "MangosR2 DB script development tool";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Hauptfenster_FormClosing);
             this.Load += new System.EventHandler(this.Hauptfenster_Load);
             this.menuStrip.ResumeLayout(false);
