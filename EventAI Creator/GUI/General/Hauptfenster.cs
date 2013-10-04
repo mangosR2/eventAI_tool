@@ -36,7 +36,7 @@ namespace EventAI_Creator
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Textdateien (*.txt)|*.txt|Alle Dateien (*.*)|*.*";
+            openFileDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 string FileName = openFileDialog.FileName;
@@ -48,7 +48,7 @@ namespace EventAI_Creator
             this.SaveAllNPCsTocreatures();
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "SQL Scriptdateien (*.sql)|*.sql|Alle Dateien (*.*)|*.*";
+            saveFileDialog.Filter = "SQL files (*.sql)|*.sql|All files (*.*)|*.*";
             if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 string FileName = saveFileDialog.FileName;
@@ -359,9 +359,9 @@ namespace EventAI_Creator
         private void help_toolstrip_button_Click(object sender, EventArgs e)
         {
             if (comboBox_script_type.SelectedIndex == 0)
-                System.Diagnostics.Process.Start("https://raw.github.com/mangos/mangos/master/doc/EventAI.txt");
+                System.Diagnostics.Process.Start("https://raw.github.com/mangosR2/mangos/master/doc/EventAI.txt");
             else
-                System.Diagnostics.Process.Start("https://raw.github.com/mangos/mangos/master/doc/script_commands.txt");
+                System.Diagnostics.Process.Start("https://raw.github.com/mangosR2/mangos/master/doc/script_commands.txt");
         }
 
         private void db_scripts_button_Click(object sender, EventArgs e)
