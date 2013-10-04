@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>E:\Dev_tools\EventAI_creator\|D:\Dev_tools\EventAI_creator\|D:\Dev_tools\EventAI\</PublishUrlHistory>
-    <InstallUrlHistory>
-    </InstallUrlHistory>
+    <PublishUrlHistory>http://www.github.com/MangosR2/eventAI_tool/|http://www.github.com/MangosR2/|E:\Dev_tools\EventAI_creator\|D:\Dev_tools\EventAI_creator\|D:\Dev_tools\EventAI\</PublishUrlHistory>
+    <InstallUrlHistory>http://www.github.com/MangosR2/eventAI_tool/Install/</InstallUrlHistory>
     <SupportUrlHistory>
     </SupportUrlHistory>
-    <UpdateUrlHistory>
-    </UpdateUrlHistory>
+    <UpdateUrlHistory>http://localhost/EventAI Creator/</UpdateUrlHistory>
     <BootstrapperUrlHistory>
     </BootstrapperUrlHistory>
     <FallbackCulture>de-DE</FallbackCulture>

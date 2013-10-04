@@ -102,7 +102,7 @@
             this.exitToolStripMenuItem});
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(43, 20);
+            this.fileMenu.Size = new System.Drawing.Size(42, 20);
             this.fileMenu.Text = "&Data";
             // 
             // newToolStripMenuItem
@@ -111,19 +111,19 @@
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.ShowNewCreatureDialog);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(138, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(142, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolsStripMenuItem_Click);
             // 
@@ -131,7 +131,7 @@
             // 
             this.controlPanelToolStripMenuItem.Enabled = false;
             this.controlPanelToolStripMenuItem.Name = "controlPanelToolStripMenuItem";
-            this.controlPanelToolStripMenuItem.Size = new System.Drawing.Size(91, 20);
+            this.controlPanelToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.controlPanelToolStripMenuItem.Text = "Control Panel";
             this.controlPanelToolStripMenuItem.Click += new System.EventHandler(this.controlPanelToolStripMenuItem_Click);
             // 
@@ -142,27 +142,27 @@
             this.localizedTextsToolStripMenuItem,
             this.summonsToolStripMenuItem});
             this.toolsMenu.Name = "toolsMenu";
-            this.toolsMenu.Size = new System.Drawing.Size(49, 20);
+            this.toolsMenu.Size = new System.Drawing.Size(50, 20);
             this.toolsMenu.Text = "&Extras";
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
             // localizedTextsToolStripMenuItem
             // 
             this.localizedTextsToolStripMenuItem.Name = "localizedTextsToolStripMenuItem";
-            this.localizedTextsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.localizedTextsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.localizedTextsToolStripMenuItem.Text = "Texts";
             this.localizedTextsToolStripMenuItem.Click += new System.EventHandler(this.localizedTextsToolStripMenuItem_Click);
             // 
             // summonsToolStripMenuItem
             // 
             this.summonsToolStripMenuItem.Name = "summonsToolStripMenuItem";
-            this.summonsToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.summonsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.summonsToolStripMenuItem.Text = "Summons";
             this.summonsToolStripMenuItem.Click += new System.EventHandler(this.summonsToolStripMenuItem_Click);
             // 
@@ -175,7 +175,7 @@
             this.closeAllToolStripMenuItem,
             this.arrangeIconsToolStripMenuItem});
             this.windowsMenu.Name = "windowsMenu";
-            this.windowsMenu.Size = new System.Drawing.Size(63, 20);
+            this.windowsMenu.Size = new System.Drawing.Size(57, 20);
             this.windowsMenu.Text = "&Window";
             // 
             // cascadeToolStripMenuItem
@@ -216,7 +216,7 @@
             // reloadDatabaseToolStripMenuItem
             // 
             this.reloadDatabaseToolStripMenuItem.Name = "reloadDatabaseToolStripMenuItem";
-            this.reloadDatabaseToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
+            this.reloadDatabaseToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.reloadDatabaseToolStripMenuItem.Text = "Reload Database";
             this.reloadDatabaseToolStripMenuItem.Click += new System.EventHandler(this.reloadDatabaseToolStripMenuItem_Click);
             // 
@@ -311,7 +311,7 @@
             // toolStripLabel_search
             // 
             this.toolStripLabel_search.Name = "toolStripLabel_search";
-            this.toolStripLabel_search.Size = new System.Drawing.Size(93, 22);
+            this.toolStripLabel_search.Size = new System.Drawing.Size(90, 22);
             this.toolStripLabel_search.Text = "Search for entry:";
             // 
             // toolStripTextBox_search
@@ -358,7 +358,7 @@
             // toolStripStatusLabel
             // 
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
-            this.toolStripStatusLabel.Size = new System.Drawing.Size(39, 17);
+            this.toolStripStatusLabel.Size = new System.Drawing.Size(38, 17);
             this.toolStripStatusLabel.Text = "Status";
             // 
             // panel1
@@ -393,8 +393,8 @@
             // 
             // npclistbox
             // 
-            this.npclistbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.npclistbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
             this.npclistbox.ContextMenuStrip = this.creaturelistboxcontextmenu;
             this.npclistbox.FormattingEnabled = true;
             this.npclistbox.Location = new System.Drawing.Point(12, 76);

@@ -25,7 +25,7 @@ namespace EventAI_Creator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
         public string DBHost {
             get {
                 return ((string)(this["DBHost"]));
@@ -37,7 +37,7 @@ namespace EventAI_Creator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3306")]
         public string DBPort {
             get {
                 return ((string)(this["DBPort"]));
@@ -49,7 +49,7 @@ namespace EventAI_Creator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("mangos")]
         public string DBUSER {
             get {
                 return ((string)(this["DBUSER"]));
@@ -61,7 +61,7 @@ namespace EventAI_Creator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("mangos")]
         public string DBPW {
             get {
                 return ((string)(this["DBPW"]));
@@ -73,7 +73,7 @@ namespace EventAI_Creator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("mangos")]
         public string DBMANGOS {
             get {
                 return ((string)(this["DBMANGOS"]));
@@ -85,85 +85,13 @@ namespace EventAI_Creator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("scriptdev2")]
         public string DBSD {
             get {
                 return ((string)(this["DBSD"]));
             }
             set {
                 this["DBSD"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool SSHUSE {
-            get {
-                return ((bool)(this["SSHUSE"]));
-            }
-            set {
-                this["SSHUSE"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SSHHOST {
-            get {
-                return ((string)(this["SSHHOST"]));
-            }
-            set {
-                this["SSHHOST"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SSHPORT {
-            get {
-                return ((string)(this["SSHPORT"]));
-            }
-            set {
-                this["SSHPORT"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SSHUSER {
-            get {
-                return ((string)(this["SSHUSER"]));
-            }
-            set {
-                this["SSHUSER"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SSHPW {
-            get {
-                return ((string)(this["SSHPW"]));
-            }
-            set {
-                this["SSHPW"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SSHRPORT {
-            get {
-                return ((string)(this["SSHRPORT"]));
-            }
-            set {
-                this["SSHRPORT"] = value;
             }
         }
     }

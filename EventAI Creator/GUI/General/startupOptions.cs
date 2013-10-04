@@ -19,36 +19,14 @@ namespace EventAI_Creator.GUI.General
 
         private void connectbutton_Click(object sender, EventArgs e)
         {
-            if (sshcheckbox.Checked)
+            if(SQLConnection.Connect(tboxmysqlhost.Text, tboxmysqlname.Text, tboxmysqlpw.Text, /*tboxmysqlsd2db.Text,*/ tboxmysqlwordldb.Text))
             {
-                if (SSHConnection.Connect(tboxsshhost.Text, tboxsshuser.Text, tboxsshpw.Text, tboxsshport.Text))
-                {
-                    if(SQLConnection.Connect(tboxmysqlhost.Text, tboxmysqlname.Text, tboxmysqlpw.Text, /*tboxmysqlsd2db.Text,*/ tboxmysqlwordldb.Text))
-                    {
-                        Datastores.dbused = true;
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show(SQLConnection.error.Message);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show(SSHConnection.error.Message);
-                }
+                Datastores.dbused = true;
+                this.Close();
             }
             else
             {
-                if(SQLConnection.Connect(tboxmysqlhost.Text, tboxmysqlname.Text, tboxmysqlpw.Text, /*tboxmysqlsd2db.Text,*/ tboxmysqlwordldb.Text))
-                {
-                    Datastores.dbused = true;
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show(SQLConnection.error.Message);
-                }
+                MessageBox.Show(SQLConnection.error.Message);
             }
         }
 
@@ -64,14 +42,9 @@ namespace EventAI_Creator.GUI.General
             tboxmysqlname.Text = Properties.Settings.Default.DBUSER ;
             tboxmysqlport.Text = Properties.Settings.Default.DBPort;
             tboxmysqlpw.Text = Properties.Settings.Default.DBPW;
-            //tboxmysqlsd2db.Text = Properties.Settings.Default.DBSD;
             tboxmysqlwordldb.Text = Properties.Settings.Default.DBMANGOS;
-            tboxsshhost.Text = Properties.Settings.Default.SSHHOST;
-            tboxsshport.Text = Properties.Settings.Default.SSHPORT;
-            tboxsshpw.Text = Properties.Settings.Default.SSHPW;
-            tboxsshuser.Text = Properties.Settings.Default.SSHUSER;
-            sshcheckbox.Checked = Properties.Settings.Default.SSHUSE;
-
+            tboxmysqlsd2db.Text = Properties.Settings.Default.DBSD;
+            
             //Properties.Settings.Default;
         }
 
@@ -82,34 +55,9 @@ namespace EventAI_Creator.GUI.General
             Properties.Settings.Default.DBPW =tboxmysqlpw.Text;
             Properties.Settings.Default.DBPort = tboxmysqlport.Text;
             Properties.Settings.Default.DBMANGOS =tboxmysqlwordldb.Text;
-            //Properties.Settings.Default.DBSD = tboxmysqlsd2db.Text;
-            Properties.Settings.Default.SSHHOST = tboxsshhost.Text;
-            Properties.Settings.Default.SSHPORT =tboxsshport.Text;
-            Properties.Settings.Default.SSHPW =tboxsshpw.Text;
-            Properties.Settings.Default.SSHUSER =tboxsshuser.Text;
-            Properties.Settings.Default.SSHUSE =sshcheckbox.Checked;
+            Properties.Settings.Default.DBSD = tboxmysqlsd2db.Text;
             Properties.Settings.Default.Save();
-
-            //Properties.Settings.Default.SSHRPORT;
         }
-
-        // Change the state of the ssh boxes when the checkbox is checked or unchecked
-        private void sshcheckbox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (sshcheckbox.Checked)
-            {
-                tboxsshhost.ReadOnly = false;
-                tboxsshport.ReadOnly = false;
-                tboxsshpw.ReadOnly = false;
-                tboxsshuser.ReadOnly = false;
-            }
-            else
-            {
-                tboxsshhost.ReadOnly = true;
-                tboxsshport.ReadOnly = true;
-                tboxsshpw.ReadOnly = true;
-                tboxsshuser.ReadOnly = true;
-            }
-        }
+        
     }
 }

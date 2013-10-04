@@ -8,8 +8,6 @@ using MySql.Data;
 using System.Net;
 using System.Net.Sockets;
 using System.Globalization;
-using Tamir.SharpSsh.jsch;
-using Tamir.SharpSsh.jsch.jce;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
@@ -947,50 +945,6 @@ namespace EventAI_Creator
         public static MySqlConnection conn;
     }
 
-    static class SSHConnection
-    {
-        public static bool Connect(string thost,string tuser,string tpass,string tport)
-        {
-            try
-            {
-                JSch jsch = new JSch();
-                host = thost;
-                user = tuser;
-                pass = tpass;
-                sshPort = Convert.ToInt32(tport);
-
-                session = jsch.getSession(user, host, sshPort);
-                session.setHost(host);
-                session.setPassword(pass);
-                UserInfo ui = new MyUserInfo();
-                session.setUserInfo(ui);
-                session.connect();
-                session.setPortForwardingL(lPort, "127.0.0.1", rPort);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                error = ex;
-                return false;
-            }
-        }
-        public static void DisConnect()
-        {
-            if(!(session == null))
-            session.disconnect();
-        }
-
-        public static string host;
-        public static string user;
-        public static string pass;
-        public static int sshPort;
-        public static int rPort = 3306;
-        public static int lPort = 3306;
-        public static Exception error;
-
-        public static Session session;
-    }
-
     static class SQLCommonExecutes
     {
         public static bool setScriptnameInCreature_template(uint id,bool setnow)
@@ -1161,47 +1115,5 @@ namespace EventAI_Creator
             return result;
         }
     }
-
-    public class MyUserInfo : UserInfo
-    {
-        /// &lt;summary&gt;
-        /// Holds the user password
-        /// &lt;/summary&gt;
-        private String passwd;
-
-        /// &lt;summary&gt;
-        /// Returns the user password
-        /// &lt;/summary&gt;
-        public String getPassword() { return passwd; }
-
-        /// &lt;summary&gt;
-        /// Prompt the user for a Yes/No input
-        /// &lt;/summary&gt;
-        public bool promptYesNo(String str)
-        {
-            return true;
-        }
-
-        /// &lt;summary&gt;
-        /// Returns the user passphrase (passwd for the private key file)
-        /// &lt;/summary&gt;
-        public String getPassphrase() { return null; }
-
-        /// &lt;summary&gt;
-        /// Prompt the user for a passphrase (passwd for the private key file)
-        /// &lt;/summary&gt;
-        public bool promptPassphrase(String message) { return true; }
-
-        /// &lt;summary&gt;
-        /// Prompt the user for a password
-        /// &lt;/summary&gt;
-        public bool promptPassword(String message) { return true; }
-
-        /// &lt;summary&gt;
-        /// Shows a message to the user
-        /// &lt;/summary&gt;
-        public void showMessage(String message) { }
-
-    }
-
+       
 }

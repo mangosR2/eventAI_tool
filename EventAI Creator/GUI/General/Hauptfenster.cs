@@ -318,7 +318,6 @@ namespace EventAI_Creator
         private void Hauptfenster_FormClosing(object sender, FormClosingEventArgs e)
         {
             SQLConnection.DisConnect();
-            SSHConnection.DisConnect();
         }
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
