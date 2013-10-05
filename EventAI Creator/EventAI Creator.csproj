@@ -26,22 +26,22 @@
     <PublishUrl>C:\GAMES\eventAI_tool\Install\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>true</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <UpdateUrl>http://www.github.com/MangosR2/eventAI_tool/Install/</UpdateUrl>
+    <UpdateUrl>http://raw.github.com/MangosR2/eventAI_tool/blob/master/Install/</UpdateUrl>
     <SupportUrl>http://mangosr2.2x2forum.com/</SupportUrl>
     <ErrorReportUrl>https://github.com/eventAI_tool/issues</ErrorReportUrl>
     <TargetCulture>en-US</TargetCulture>
     <ProductName>EventAI creator</ProductName>
     <PublisherName>MangosR2</PublisherName>
-    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>0.2.3.5</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>

@@ -3,12 +3,7 @@
   <assemblyIdentity name="EventAI Creator.application" version="0.2.3.5" publicKeyToken="0000000000000000" language="en-US" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <description asmv2:publisher="MangosR2" asmv2:product="EventAI creator" asmv2:supportUrl="http://mangosr2.2x2forum.com/" co.v1:errorReportUrl="https://github.com/eventAI_tool/issues" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true">
-    <subscription>
-      <update>
-        <expiration maximumAge="7" unit="days" />
-      </update>
-    </subscription>
-    <deploymentProvider codebase="http://www.github.com/MangosR2/eventAI_tool/Install/EventAI%20Creator.application" />
+    <deploymentProvider codebase="http://raw.github.com/MangosR2/eventAI_tool/blob/master/Install/EventAI%20Creator.application" />
   </deployment>
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
