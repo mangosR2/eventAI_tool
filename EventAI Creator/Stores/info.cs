@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+﻿
 namespace EventAI_Creator
 {
     class info
@@ -94,6 +90,7 @@ namespace EventAI_Creator
 /*43 | 01 */{"MOUNT_TO_ENTRY_OR_MODEL","CreatureEntry","ModelId","","Set mount model from creature_template.entry (Param1) OR explicit modelId (Param2). If (Param1) AND (Param2) are both 0, unmount."},
 /*44 | 01 */{"CHANCED_TEXT","Chance","-TextId1","-TextId2","Displays by Chance (1..100) the specified -TextId. When -TextId2 is specified, the selection will be randomized. Text types are defined, along with other options for the text, in a table below. Param2 and Param3 needs to be negative."},
 /*45 | 01 */{"THROW_AI_EVENT","EventType","Radius","","Throws an AIEvent of type (Param1) to nearby friendly Npcs in range of (Param2)"},
+/*46 | 01 */{"SET_THROW_MASK","EventTypeMask","","","EventTypeMask - Which AIEvents to throw, supported types see CreatureAI.h enum AIEventType (mask-value is 2^type)"},
         };
 
         public static string[] EventFlags = new string[]
@@ -160,14 +157,32 @@ namespace EventAI_Creator
             "HOSTILE_RANDOM_PLAYER",
             "HOSTILE_RANDOM_NOT_TOP_PLAYER",
             "EVENT_SENDER",
+            "END",
+            "","","","","","","","","",
+            "","","","","","","","","","",
+            "","","","","","","","","","",
+            "","","","","","","","","","",
+            "VEHICLE_PASSENGER",
+            "VEHICLE_PASSENGER_0",
+            "VEHICLE_PASSENGER_1",
+            "VEHICLE_PASSENGER_2",
+            "VEHICLE_PASSENGER_3",
+            "VEHICLE_PASSENGER_4",
+            "VEHICLE_PASSENGER_5",
+            "VEHICLE_PASSENGER_6",
+            "VEHICLE_PASSENGER_7",
+            "CURRENT_VEHICLE",
         };
 
         public static string[] FactionFlag = new string[]
         {
-        //  "TEMPFACTION_NONE",
+            "TEMPFACTION_NONE",
             "TEMPFACTION_RESTORE_RESPAWN",
             "TEMPFACTION_RESTORE_COMBAT_STOP",
-            "TEMPFACTION_RESTORE_REACH_HOME"
+            "TEMPFACTION_RESTORE_REACH_HOME",
+            "TEMPFACTION_TOGGLE_NON_ATTACKABLE",
+            "TEMPFACTION_TOGGLE_OOC_NOT_ATTACK",
+            "TEMPFACTION_TOGGLE_PASSIVE",
         };
 
         public static string[] TeamTemplate = new string[] {"ALLIANCE", "HORDE"};
@@ -269,7 +284,9 @@ namespace EventAI_Creator
             "BUDDY_AS_TARGET",
             "REVERSE_DIRECTION",
             "SOURCE_TARGETS_SELF",
-            "COMMAND_ADDITIONAL"
+            "COMMAND_ADDITIONAL",
+            "BUDDY_BY_GUID",
+            "BUDDY_IS_PET",
         };
 
         public static string[] GameObjectFlags = new string[]
