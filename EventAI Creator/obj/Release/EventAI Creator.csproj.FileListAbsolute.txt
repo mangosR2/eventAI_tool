@@ -24,3 +24,28 @@ C:\Documents and Settings\rsa\Мои документы\VC\eventAI_tool\EventAI 
 C:\Documents and Settings\rsa\Мои документы\VC\eventAI_tool\EventAI Creator\obj\Release\EventAI Creator.application
 C:\Documents and Settings\rsa\Мои документы\VC\eventAI_tool\EventAI Creator\obj\Release\EventAI Creator.exe
 C:\Documents and Settings\rsa\Мои документы\VC\eventAI_tool\EventAI Creator\obj\Release\EventAI Creator.pdb
+C:\GAMES\eventAI_tool\EventAI Creator\bin\Release\EventAI Creator.exe.config
+C:\GAMES\eventAI_tool\EventAI Creator\bin\Release\EventAI Creator.exe.manifest
+C:\GAMES\eventAI_tool\EventAI Creator\bin\Release\EventAI Creator.application
+C:\GAMES\eventAI_tool\EventAI Creator\bin\Release\EventAI Creator.exe
+C:\GAMES\eventAI_tool\EventAI Creator\bin\Release\EventAI Creator.pdb
+C:\GAMES\eventAI_tool\EventAI Creator\bin\Release\MySql.Data.dll
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\ResolveAssemblyReference.cache
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI_Creator.DbScriptControl.resources
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI_Creator.EventFlag.resources
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI_Creator.NPCEditor.resources
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI_Creator.GUI.General.ControlPanel.resources
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI_Creator.Hauptfenster.resources
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI_Creator.NewCreatureDialog.resources
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI_Creator.ScriptDisplay.resources
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI_Creator.GUI.General.eAICreator.resources
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI_Creator.GUI.General.localestext.TEXTEditor.resources
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI_Creator.SummonsEditor.resources
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI_Creator.Properties.Resources.resources
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI_Creator.EventControl.resources
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\GenerateResource.read.1.tlog
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\GenerateResource.write.1.tlog
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI Creator.exe.manifest
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI Creator.application
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI Creator.exe
+C:\GAMES\eventAI_tool\EventAI Creator\obj\Release\EventAI Creator.pdb
