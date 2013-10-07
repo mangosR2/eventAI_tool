@@ -97,15 +97,15 @@ namespace EventAI_Creator.GUI.General.localestext
             {
                 text_id = System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex]);
                 textlocalID.Text = text_id.ToString();
-                TextBoxlocal0.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale_0;
-                TextBoxlocal1.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale_1;
-                TextBoxlocal2.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale_2;
-                TextBoxlocal3.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale_3;
-                TextBoxlocal4.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale_4;
-                TextBoxlocal5.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale_5;
-                TextBoxlocal6.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale_6;
-                TextBoxlocal7.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale_7;
-                TextBoxlocal8.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale_8;
+                TextBoxlocal0.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale[0];
+                TextBoxlocal1.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale[1];
+                TextBoxlocal2.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale[2];
+                TextBoxlocal3.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale[3];
+                TextBoxlocal4.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale[4];
+                TextBoxlocal5.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale[5];
+                TextBoxlocal6.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale[6];
+                TextBoxlocal7.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale[7];
+                TextBoxlocal8.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].locale[8];
                 textBox_sound_id.Text = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].sound.ToString();
 
                 int languageId = localized_texts.map[System.Convert.ToInt32(customlistBoxtexts.Items[customlistBoxtexts.SelectedIndex])].language;
@@ -161,23 +161,23 @@ namespace EventAI_Creator.GUI.General.localestext
             if (customlistBoxtexts.SelectedIndex != -1)
             {
                 if ((sender as RichTextBox) == TextBoxlocal0)
-                    localized_texts.map[text_id].locale_0 = TextBoxlocal0.Text;
+                    localized_texts.map[text_id].locale[0] = TextBoxlocal0.Text;
                 if ((sender as RichTextBox) == TextBoxlocal1)
-                    localized_texts.map[text_id].locale_1 = TextBoxlocal1.Text;
+                    localized_texts.map[text_id].locale[1] = TextBoxlocal1.Text;
                 if ((sender as RichTextBox) == TextBoxlocal2)
-                    localized_texts.map[text_id].locale_2 = TextBoxlocal2.Text;
+                    localized_texts.map[text_id].locale[2] = TextBoxlocal2.Text;
                 if ((sender as RichTextBox) == TextBoxlocal3)
-                    localized_texts.map[text_id].locale_3 = TextBoxlocal3.Text;
+                    localized_texts.map[text_id].locale[3] = TextBoxlocal3.Text;
                 if ((sender as RichTextBox) == TextBoxlocal4)
-                    localized_texts.map[text_id].locale_4 = TextBoxlocal4.Text;
+                    localized_texts.map[text_id].locale[4] = TextBoxlocal4.Text;
                 if ((sender as RichTextBox) == TextBoxlocal5)
-                    localized_texts.map[text_id].locale_5 = TextBoxlocal5.Text;
+                    localized_texts.map[text_id].locale[5] = TextBoxlocal5.Text;
                 if ((sender as RichTextBox) == TextBoxlocal6)
-                    localized_texts.map[text_id].locale_6 = TextBoxlocal6.Text;
+                    localized_texts.map[text_id].locale[6] = TextBoxlocal6.Text;
                 if ((sender as RichTextBox) == TextBoxlocal7)
-                    localized_texts.map[text_id].locale_7 = TextBoxlocal7.Text;
+                    localized_texts.map[text_id].locale[7] = TextBoxlocal7.Text;
                 if ((sender as RichTextBox) == TextBoxlocal8)
-                    localized_texts.map[text_id].locale_8 = TextBoxlocal8.Text;
+                    localized_texts.map[text_id].locale[8] = TextBoxlocal8.Text;
                 if ((sender as TextBox) == textboxcomment)
                     localized_texts.map[text_id].comment = textboxcomment.Text;
                 if ((sender as TextBox) == textBox_sound_id)

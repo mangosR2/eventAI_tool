@@ -45,7 +45,18 @@ namespace EventAI_Creator
         public bool changed = false;
         public List<Event_dataset_script> line = new List<Event_dataset_script>();
     }
-
+    
+    public class script_string
+    {
+        public uint entry;
+        public string[] content_loc = {"","","","","","","","",""};    // default = 0, english;
+        public uint sound = 0;
+        public uint type = 0;
+        public uint language = 0;
+        public uint emote = 0;
+        public string comment = "";
+    }
+    
     static class db_scripts
     {
         public static bool AddScript(db_script script)
@@ -91,5 +102,7 @@ namespace EventAI_Creator
 
         public static SortedList<uint, db_script> scriptList = new SortedList<uint, db_script>();
         public static List<uint> scriptsAvailable = new List<uint>();
+        public static List<script_string> script_texts = new List<script_string>();
     }
+   
 }

@@ -133,55 +133,55 @@ namespace EventAI_Creator
                     while (reader.Read())
                     {
                         localized_text item = new localized_text(reader.GetInt32("entry"));
-                        item.locale_0 = reader.GetString("content_default");
+                        item.locale[0] = reader.GetString("content_default");
 
                         int colIndex = reader.GetOrdinal("content_loc1");
                         if (!reader.IsDBNull(colIndex))
-                            item.locale_1 = reader.GetString("content_loc1");
+                            item.locale[1] = reader.GetString("content_loc1");
                         else
-                            item.locale_1 = string.Empty;
+                            item.locale[1] = string.Empty;
 
                         colIndex = reader.GetOrdinal("content_loc2");
                         if (!reader.IsDBNull(colIndex))
-                            item.locale_2 = reader.GetString("content_loc2");
+                            item.locale[2] = reader.GetString("content_loc2");
                         else
-                            item.locale_2 = string.Empty;
+                            item.locale[2] = string.Empty;
 
                         colIndex = reader.GetOrdinal("content_loc3");
                         if (!reader.IsDBNull(colIndex))
-                            item.locale_3 = reader.GetString("content_loc3");
+                            item.locale[3] = reader.GetString("content_loc3");
                         else
-                            item.locale_3 = string.Empty;
+                            item.locale[3] = string.Empty;
 
                         colIndex = reader.GetOrdinal("content_loc4");
                         if (!reader.IsDBNull(colIndex))
-                            item.locale_4 = reader.GetString("content_loc4");
+                            item.locale[4] = reader.GetString("content_loc4");
                         else
-                            item.locale_4 = string.Empty;
+                            item.locale[4] = string.Empty;
 
                         colIndex = reader.GetOrdinal("content_loc5");
                         if (!reader.IsDBNull(colIndex))
-                            item.locale_5 = reader.GetString("content_loc5");
+                            item.locale[5] = reader.GetString("content_loc5");
                         else
-                            item.locale_5 = string.Empty;
+                            item.locale[5] = string.Empty;
 
                         colIndex = reader.GetOrdinal("content_loc6");
                         if (!reader.IsDBNull(colIndex))
-                            item.locale_6 = reader.GetString("content_loc6");
+                            item.locale[6] = reader.GetString("content_loc6");
                         else
-                            item.locale_6 = string.Empty;
+                            item.locale[6] = string.Empty;
 
                         colIndex = reader.GetOrdinal("content_loc7");
                         if (!reader.IsDBNull(colIndex))
-                            item.locale_7 = reader.GetString("content_loc7");
+                            item.locale[7] = reader.GetString("content_loc7");
                         else
-                            item.locale_7 = string.Empty;
+                            item.locale[7] = string.Empty;
 
                         colIndex = reader.GetOrdinal("content_loc8");
                         if (!reader.IsDBNull(colIndex))
-                            item.locale_8 = reader.GetString("content_loc8");
+                            item.locale[8] = reader.GetString("content_loc8");
                         else
-                            item.locale_8 = string.Empty;
+                            item.locale[8] = string.Empty;
 
                         item.sound = reader.GetInt32("sound");
                         item.type = reader.GetInt32("type");
@@ -319,6 +319,77 @@ namespace EventAI_Creator
                         item.comment = reader.GetString("comments");
 
                         db_scripts.scriptList[reader.GetUInt32("id")].line.Add(item);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                reader.Close();
+            }
+        }
+
+        // Load DB scripts
+        public static void LoadDBScriptTexts()
+        {
+            if (!Datastores.dbused)
+                return;
+            MySqlDataReader reader = null;
+
+            // Check for the creatureAI tables
+            try
+            {
+                string sQuery = "SELECT information_schema.TABLES.table_name FROM information_schema.TABLES " +
+                    "where information_schema.TABLES.table_name IN ('db_script_strings') and information_schema.TABLES.Table_schema='" + Properties.Settings.Default.DBMANGOS + "'";
+                MySqlCommand comm = new MySqlCommand(sQuery, SQLConnection.conn);
+                reader = comm.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (!reader.HasRows)
+                    {
+                        MessageBox.Show("Your database doesn't contain the script strings table. The application won't use the database anymore");
+                        dbused = false;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            reader.Close();
+
+            if (Datastores.dbused)
+            {
+                // Select all creature scripts and creature names
+                MySqlCommand c = new MySqlCommand("SELECT * FROM `db_script_string`", SQLConnection.conn);
+                reader = c.ExecuteReader();
+
+                // clear existing script first
+                db_scripts.script_texts.Clear();
+
+                try
+                {
+                    while (reader.Read())
+                    {
+                        script_string item = new script_string();
+                        item.entry = reader.GetUInt32("entry");
+                        item.content_loc[0] = reader.GetString("content_default");
+                        item.content_loc[1] = reader.GetString("content_loc1");
+                        item.content_loc[2] = reader.GetString("content_loc2");
+                        item.content_loc[3] = reader.GetString("content_loc3");
+                        item.content_loc[4] = reader.GetString("content_loc4");
+                        item.content_loc[5] = reader.GetString("content_loc5");
+                        item.content_loc[6] = reader.GetString("content_loc6");
+                        item.content_loc[7] = reader.GetString("content_loc7");
+                        item.content_loc[8] = reader.GetString("content_loc8");
+                        item.sound = reader.GetUInt32("sound");
+                        item.type = reader.GetUInt32("type");
+                        item.language = reader.GetUInt32("language");
+                        item.emote = reader.GetUInt32("emote");
+                        item.comment = reader.GetString("comment");
+
+                        //script_strings.Add(item);
                     }
                 }
                 catch (Exception ex)
@@ -662,16 +733,16 @@ namespace EventAI_Creator
                 localized_text copy = item as localized_text;
                 if (!copy.useOtherLocale)
                     customquery = "INSERT INTO `creature_ai_texts` (`entry`,`content_default`,`sound`,`type`,`language`,`comment`,`emote`) VALUES \r\n('" +
-                        copy.id + "','" + MySqlHelper.EscapeString(copy.locale_0) + "','" +
+                        copy.id + "','" + MySqlHelper.EscapeString(copy.locale[0]) + "','" +
                         copy.sound + "','" + copy.type + "','" + copy.language + "','" +
                         MySqlHelper.EscapeString(copy.comment) + "','" + copy.emote + "');";
                 else
                     customquery = "INSERT INTO creature_ai_texts VALUES \r\n('"
-                            + copy.id + "','" + MySqlHelper.EscapeString(copy.locale_0) + "','" + MySqlHelper.EscapeString(copy.locale_1) + "','"
-                            + MySqlHelper.EscapeString(copy.locale_2) + "','" + MySqlHelper.EscapeString(copy.locale_3) + "','"
-                            + MySqlHelper.EscapeString(copy.locale_4) + "','" + MySqlHelper.EscapeString(copy.locale_5) + "','"
-                            + MySqlHelper.EscapeString(copy.locale_6) + "','" + MySqlHelper.EscapeString(copy.locale_7) + "','"
-                            + MySqlHelper.EscapeString(copy.locale_8) + "','" + copy.sound + "','" + copy.type + "','" + copy.language + "','"
+                            + copy.id + "','" + MySqlHelper.EscapeString(copy.locale[0]) + "','" + MySqlHelper.EscapeString(copy.locale[1]) + "','"
+                            + MySqlHelper.EscapeString(copy.locale[2]) + "','" + MySqlHelper.EscapeString(copy.locale[3]) + "','"
+                            + MySqlHelper.EscapeString(copy.locale[4]) + "','" + MySqlHelper.EscapeString(copy.locale[5]) + "','"
+                            + MySqlHelper.EscapeString(copy.locale[6]) + "','" + MySqlHelper.EscapeString(copy.locale[7]) + "','"
+                            + MySqlHelper.EscapeString(copy.locale[8]) + "','" + copy.sound + "','" + copy.type + "','" + copy.language + "','"
                             + copy.emote + "," + MySqlHelper.EscapeString(copy.comment) + "');";
              }
             // not used
@@ -685,16 +756,16 @@ namespace EventAI_Creator
                 {
                     if (!localized_texts.map[itemf.Key].useOtherLocale)
                         customquery = customquery + "INSERT INTO `creature_ai_texts` (`entry`,`content_default`,`sound`,`type`,`language`,`comment`,`emote`) VALUES \r\n('" +
-                            localized_texts.map[itemf.Key].id + "','" + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale_0) + "','" +
+                            localized_texts.map[itemf.Key].id + "','" + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale[0]) + "','" +
                             localized_texts.map[itemf.Key].sound + "','" + localized_texts.map[itemf.Key].type + "','" + localized_texts.map[itemf.Key].language + "','" +
                             MySqlHelper.EscapeString(localized_texts.map[itemf.Key].comment) + "','" + localized_texts.map[itemf.Key].emote + "');";
                     else
                         customquery = customquery + "INSERT INTO creature_ai_texts VALUES \r\n('"
-                            + localized_texts.map[itemf.Key].id + "','" + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale_0) + "','" + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale_1) + "','"
-                            + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale_2) + "','" + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale_3) + "','"
-                            + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale_4) + "','" + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale_5) + "','"
-                            + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale_6) + "','" + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale_7) + "','"
-                            + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale_8) + "','" + localized_texts.map[itemf.Key].sound + "','" + localized_texts.map[itemf.Key].type + "','" + localized_texts.map[itemf.Key].language + "','"
+                            + localized_texts.map[itemf.Key].id + "','" + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale[0]) + "','" + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale[1]) + "','"
+                            + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale[2]) + "','" + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale[3]) + "','"
+                            + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale[4]) + "','" + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale[5]) + "','"
+                            + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale[6]) + "','" + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale[7]) + "','"
+                            + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].locale[8]) + "','" + localized_texts.map[itemf.Key].sound + "','" + localized_texts.map[itemf.Key].type + "','" + localized_texts.map[itemf.Key].language + "','"
                             + localized_texts.map[itemf.Key].emote + "," + MySqlHelper.EscapeString(localized_texts.map[itemf.Key].comment) + "');";
                 }
             }

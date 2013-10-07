@@ -51,15 +51,7 @@ namespace EventAI_Creator
         public int id;
         public bool changed = false;
         public bool useOtherLocale = false;
-        public string locale_0 = "";    // default = english
-        public string locale_1 = "";    // korean
-        public string locale_2 = "";    // french
-        public string locale_3 = "";    // german
-        public string locale_4 = "";    // chinese
-        public string locale_5 = "";    // waiwanese
-        public string locale_6 = "";    // spanish
-        public string locale_7 = "";    // spanish mexico
-        public string locale_8 = "";    // russian
+        public string[] locale = {"","","","","","","","",""};    // default = english
         public int sound = 0;
         public int type = 0;
         public int language = 0;

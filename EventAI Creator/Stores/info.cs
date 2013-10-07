@@ -265,18 +265,18 @@ namespace EventAI_Creator
 
         public static string[] MovementTemplate = new string[] { "IDLE", "RANDOMP", "WAYPOINT" };
 
-        public static string[] ScriptTemplate = new string[]
+        public static string[,] ScriptTemplate = new string[,]
         {
-            "CREATURE_AI_SCRIPTS",
-            "DBSCRIPTS_ON_CREATURE_DEATH",
-            "DBSCRIPTS_ON_CREATURE_MOVEMENT",
-            "DBSCRIPTS_ON_EVENT",
-            "DBSCRIPTS_ON_GOSSIP",
-            "DBSCRIPTS_ON_GO_USE",
-            "DBSCRIPTS_ON_GO_TEMPLATE_USE",
-            "DBSCRIPTS_ON_QUEST_END",
-            "DBSCRIPTS_ON_QUEST_START",
-            "DBSCRIPTS_ON_SPELL"
+            {"CREATURE_AI_SCRIPTS","creature_ai_scripts"},
+            {"DBSCRIPTS_ON_CREATURE_DEATH","dbscripts_on_creature_death"},
+            {"DBSCRIPTS_ON_CREATURE_MOVEMENT","dbscripts_on_creature_movement"},
+            {"DBSCRIPTS_ON_EVENT","dbscripts_on_event"},
+            {"DBSCRIPTS_ON_GOSSIP","dbscripts_on_gossip"},
+            {"DBSCRIPTS_ON_GO_USE","dbscripts_on_go_use"},
+            {"DBSCRIPTS_ON_GO_TEMPLATE_USE","dbscripts_on_go_template_use"},
+            {"DBSCRIPTS_ON_QUEST_END","dbscripts_on_quest_end"},
+            {"DBSCRIPTS_ON_QUEST_START","dbscripts_on_quest_start"},
+            {"DBSCRIPTS_ON_SPELL","dbscripts_on_spell"},
         };
 
         public static string[] ScriptFlags = new string[]

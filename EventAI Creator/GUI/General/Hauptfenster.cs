@@ -291,7 +291,9 @@ namespace EventAI_Creator
         private void Hauptfenster_Load(object sender, EventArgs e)
         {
             // Init script types
-            comboBox_script_type.Items.AddRange(Info.ScriptTemplate);
+            for (int n = 0; n < Info.ScriptTemplate.GetLength(0); n++)
+                comboBox_script_type.Items.Add(Info.ScriptTemplate[n,0]);
+            
             comboBox_script_type.SelectedIndex = 0;
             comboBox_script_type.DropDownStyle = ComboBoxStyle.DropDownList;
 
@@ -383,7 +385,11 @@ namespace EventAI_Creator
             if (comboBox_script_type.SelectedIndex == 0)
                 Datastores.ReloadDB();
             else
-                Datastores.LoadDBScripts(comboBox_script_type.SelectedItem.ToString());
+            {
+                Datastores.LoadDBScripts(Info.ScriptTemplate[comboBox_script_type.SelectedIndex, 1]);
+                Datastores.LoadDBScriptTexts();
+            }
+
 
             UpdateNPCListBox();
         }
