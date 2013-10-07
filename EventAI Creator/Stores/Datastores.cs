@@ -334,6 +334,7 @@ namespace EventAI_Creator
         {
             if (!Datastores.dbused)
                 return;
+            
             MySqlDataReader reader = null;
 
             // Check for the creatureAI tables
@@ -362,7 +363,7 @@ namespace EventAI_Creator
             if (Datastores.dbused)
             {
                 // Select all creature scripts and creature names
-                MySqlCommand c = new MySqlCommand("SELECT * FROM `db_script_string`", SQLConnection.conn);
+                MySqlCommand c = new MySqlCommand("SELECT * FROM db_script_string", SQLConnection.conn);
                 reader = c.ExecuteReader();
 
                 // clear existing script first
