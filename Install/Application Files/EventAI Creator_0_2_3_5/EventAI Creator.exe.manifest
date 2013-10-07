@@ -43,7 +43,7 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EventAI Creator.exe" size="878080">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EventAI Creator.exe" size="880640">
       <assemblyIdentity name="EventAI Creator" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
     </dependentAssembly>
   </dependency>

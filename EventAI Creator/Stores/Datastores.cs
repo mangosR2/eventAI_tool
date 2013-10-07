@@ -366,7 +366,7 @@ namespace EventAI_Creator
                 MySqlCommand c = new MySqlCommand("SELECT * FROM db_script_string", SQLConnection.conn);
                 reader = c.ExecuteReader();
 
-                // clear existing script first
+                // clear existing texts first
                 db_scripts.script_texts.Clear();
 
                 try
@@ -375,20 +375,72 @@ namespace EventAI_Creator
                     {
                         script_string item = new script_string();
                         item.entry = reader.GetUInt32("entry");
-                        item.content_loc[0] = reader.GetString("content_default");
-                        item.content_loc[1] = reader.GetString("content_loc1");
-                        item.content_loc[2] = reader.GetString("content_loc2");
-                        item.content_loc[3] = reader.GetString("content_loc3");
-                        item.content_loc[4] = reader.GetString("content_loc4");
-                        item.content_loc[5] = reader.GetString("content_loc5");
-                        item.content_loc[6] = reader.GetString("content_loc6");
-                        item.content_loc[7] = reader.GetString("content_loc7");
-                        item.content_loc[8] = reader.GetString("content_loc8");
+                        
+                        int colIndex = reader.GetOrdinal("content_default");
+                        if (!reader.IsDBNull(colIndex))
+                            item.content_loc[0] = reader.GetString("content_default");
+                        else
+                            item.content_loc[0] = string.Empty;
+
+                        colIndex = reader.GetOrdinal("content_loc1");
+                        if (!reader.IsDBNull(colIndex))
+                            item.content_loc[1] = reader.GetString("content_loc1");
+                        else
+                            item.content_loc[1] = string.Empty;
+
+                        colIndex = reader.GetOrdinal("content_loc2");
+                        if (!reader.IsDBNull(colIndex))
+                            item.content_loc[2] = reader.GetString("content_loc2");
+                        else
+                            item.content_loc[2] = string.Empty;
+                        
+                        colIndex = reader.GetOrdinal("content_loc3");
+                        if (!reader.IsDBNull(colIndex))
+                            item.content_loc[3] = reader.GetString("content_loc3");
+                        else
+                            item.content_loc[3] = string.Empty;
+                        
+                        colIndex = reader.GetOrdinal("content_loc4");
+                        if (!reader.IsDBNull(colIndex))
+                            item.content_loc[4] = reader.GetString("content_loc4");
+                        else
+                            item.content_loc[4] = string.Empty;
+                        
+                        colIndex = reader.GetOrdinal("content_loc5");
+                        if (!reader.IsDBNull(colIndex))
+                            item.content_loc[5] = reader.GetString("content_loc5");
+                        else
+                            item.content_loc[5] = string.Empty;
+                        
+                        colIndex = reader.GetOrdinal("content_loc6");
+                        if (!reader.IsDBNull(colIndex))
+                            item.content_loc[6] = reader.GetString("content_loc6");
+                        else
+                            item.content_loc[6] = string.Empty;
+                        
+                        colIndex = reader.GetOrdinal("content_loc7");
+                        if (!reader.IsDBNull(colIndex))
+                            item.content_loc[7] = reader.GetString("content_loc7");
+                        else
+                            item.content_loc[7] = string.Empty;
+                        
+                        colIndex = reader.GetOrdinal("content_loc8");
+                        if (!reader.IsDBNull(colIndex))
+                            item.content_loc[8] = reader.GetString("content_loc8");
+                        else
+                            item.content_loc[8] = string.Empty;
+
                         item.sound = reader.GetUInt32("sound");
                         item.type = reader.GetUInt32("type");
                         item.language = reader.GetUInt32("language");
                         item.emote = reader.GetUInt32("emote");
-                        item.comment = reader.GetString("comment");
+                        
+                        colIndex = reader.GetOrdinal("comment");
+                        if (!reader.IsDBNull(colIndex))
+                            item.comment = reader.GetString("comment");
+                        else
+                            item.comment = string.Empty;
+                        
 
                         //script_strings.Add(item);
                     }

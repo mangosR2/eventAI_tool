@@ -387,7 +387,7 @@ namespace EventAI_Creator
             else
             {
                 Datastores.LoadDBScripts(Info.ScriptTemplate[comboBox_script_type.SelectedIndex, 1]);
-                //Datastores.LoadDBScriptTexts();
+                Datastores.LoadDBScriptTexts();
             }
 
 
